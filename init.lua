@@ -196,6 +196,24 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<F2>', ':FloatermNew<CR>', { desc = 'Create a new terminal' })
+vim.keymap.set('t', '<F2>', '<C-\\><C-n>:FloatermNew<CR>', { desc = 'Create a new terminal' })
+vim.keymap.set('n', '<F3>', ':FloatermToggle<CR>', { desc = 'Toggle the terminal' })
+vim.keymap.set('t', '<F3>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'Toggle the terminal' })
+vim.keymap.set('n', '<F4>', ':FloatermPrev<CR>', { desc = 'Previous terminal' })
+vim.keymap.set('t', '<F4>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Previous terminal' })
+vim.keymap.set('n', '<F5>', ':FloatermNext<CR>', { desc = 'Previous terminal' })
+vim.keymap.set('t', '<F5>', '<C-\\><C-n>:FloatermNext<CR>', { desc = 'Previous terminal' })
+
+-- nnoremap   <silent>   <F7>    :FloatermNew<CR>
+-- tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+-- nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+-- tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+-- nnoremap   <silent>   <F9>    :FloatermNext<CR>
+-- tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+-- nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+-- tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
