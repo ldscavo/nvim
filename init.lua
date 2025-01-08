@@ -195,6 +195,12 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>e', ':Neotree show<CR>', { desc = 'Show [E]xplorer' })
       require('neo-tree').setup {
         close_if_last_window = true,
+        default_component_configs = {
+          indent = { padding = 1 },
+        },
+        filesystem = {
+          follow_current_file = { enabled = true },
+        },
       }
     end,
   },
