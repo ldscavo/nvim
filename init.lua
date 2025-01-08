@@ -113,15 +113,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<F2>', ':FloatermNew<CR>', { desc = 'Create a new terminal' })
-vim.keymap.set('t', '<F2>', '<C-\\><C-n>:FloatermNew<CR>', { desc = 'Create a new terminal' })
-vim.keymap.set('n', '<F3>', ':FloatermToggle<CR>', { desc = 'Toggle the terminal' })
-vim.keymap.set('t', '<F3>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'Toggle the terminal' })
-vim.keymap.set('n', '<F4>', ':FloatermPrev<CR>', { desc = 'Previous terminal' })
-vim.keymap.set('t', '<F4>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Previous terminal' })
-vim.keymap.set('n', '<F5>', ':FloatermNext<CR>', { desc = 'Previous terminal' })
-vim.keymap.set('t', '<F5>', '<C-\\><C-n>:FloatermNext<CR>', { desc = 'Previous terminal' })
-
 -- nnoremap   <silent>   <F7>    :FloatermNew<CR>
 -- tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
 -- nnoremap   <silent>   <F8>    :FloatermPrev<CR>
@@ -171,7 +162,44 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'voldikss/vim-floaterm',
+
+  -- Floating terminal window
+  {
+    'voldikss/vim-floaterm',
+    config = function()
+      vim.keymap.set('n', '<F2>', ':FloatermNew<CR>', { desc = 'Create a new terminal' })
+      vim.keymap.set('t', '<F2>', '<C-\\><C-n>:FloatermNew<CR>', { desc = 'Create a new terminal' })
+      vim.keymap.set('n', '<F3>', ':FloatermToggle<CR>', { desc = 'Toggle the terminal' })
+      vim.keymap.set('t', '<F3>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'Toggle the terminal' })
+      vim.keymap.set('n', '<F4>', ':FloatermPrev<CR>', { desc = 'Previous terminal' })
+      vim.keymap.set('t', '<F4>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Previous terminal' })
+      vim.keymap.set('n', '<F5>', ':FloatermNext<CR>', { desc = 'Previous terminal' })
+      vim.keymap.set('t', '<F5>', '<C-\\><C-n>:FloatermNext<CR>', { desc = 'Previous terminal' })
+    end,
+  },
+
+  -- NeoTree plugin for a VSCode-style file browsing sidebar
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+    config = function()
+      -- vim.api.nvim_create_autocmd('VimEnter', {
+      --   callback = function()
+      --     vim.cmd 'Neotree show'
+      --   end,
+      -- })
+      vim.keymap.set('n', '<leader>e', ':Neotree show<CR>', { desc = 'Show [E]xplorer' })
+      require('neo-tree').setup {
+        close_if_last_window = true,
+      }
+    end,
+  },
+
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
