@@ -618,7 +618,22 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {
+          settings = {
+            javascript = {
+              format = {
+                insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+                insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = false,
+              },
+            },
+            typescript = {
+              format = {
+                insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = false,
+                insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = false,
+              },
+            },
+          },
+        },
         --
 
         lua_ls = {
@@ -635,7 +650,7 @@ require('lazy').setup({
             },
           },
         },
-        eslint = {},
+        -- eslint = {},
         fsautocomplete = {},
         pylsp = {},
         csharp_ls = {},
