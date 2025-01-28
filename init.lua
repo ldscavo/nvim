@@ -124,8 +124,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<A-j>', ':m +1<CR>', { desc = 'Move current line down' })
 vim.keymap.set('n', '<A-k>', ':m -2<CR>', { desc = 'Move current line up' })
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv", { desc = 'Move current line down' })
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv", { desc = 'Move current line up' })
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv", { desc = 'Move selected lines down' })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv", { desc = 'Move selected lines up' })
 
 -- nnoremap   <silent>   <F7>    :FloatermNew<CR>
 -- tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
