@@ -183,37 +183,37 @@ require('lazy').setup({
   },
 
   -- NeoTree plugin for a VSCode-style file browsing sidebar
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v3.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      -- vim.api.nvim_create_autocmd('VimEnter', {
-      --   callback = function()
-      --     vim.cmd 'Neotree show'
-      --   end,
-      -- })
-      vim.keymap.set('n', '<leader>e', ':Neotree show<CR>', { desc = 'Show [E]xplorer' })
-      require('neo-tree').setup {
-        close_if_last_window = true,
-        default_component_configs = {
-          indent = { padding = 1 },
-        },
-        filesystem = {
-          follow_current_file = { enabled = true },
-          filtered_items = {
-            visible = true,
-            hide_dotfiles = false,
-            hide_gitignored = true,
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   branch = 'v3.x',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   config = function()
+  --     -- vim.api.nvim_create_autocmd('VimEnter', {
+  --     --   callback = function()
+  --     --     vim.cmd 'Neotree show'
+  --     --   end,
+  --     -- })
+  --     vim.keymap.set('n', '<leader>e', ':Neotree show<CR>', { desc = 'Show [E]xplorer' })
+  --     require('neo-tree').setup {
+  --       close_if_last_window = true,
+  --       default_component_configs = {
+  --         indent = { padding = 1 },
+  --       },
+  --       filesystem = {
+  --         follow_current_file = { enabled = true },
+  --         filtered_items = {
+  --           visible = true,
+  --           hide_dotfiles = false,
+  --           hide_gitignored = true,
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -379,6 +379,9 @@ require('lazy').setup({
             require('telescope.themes').get_dropdown(),
           },
           ['file_browser'] = {
+            theme = 'ivy',
+            grouped = true,
+            hijack_netrw = true,
             hidden = { file_browser = true, folder_browser = true },
           },
         },
