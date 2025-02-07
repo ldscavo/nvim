@@ -137,10 +137,14 @@ return {
       end,
     })
 
-    vim.diagnostic.config { virtual_text = false }
+    vim.diagnostic.config {
+      virtual_text = false,
+      underline = true,
+    }
+
     vim.api.nvim_create_autocmd({ 'CursorHold' }, {
       callback = function()
-        vim.diagnostic.open_float()
+        vim.diagnostic.open_float { focusable = false }
       end,
     })
 
