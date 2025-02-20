@@ -206,7 +206,6 @@ return {
       fsautocomplete = {},
       pylsp = {},
       csharp_ls = {},
-      azure_pipelines_ls = {},
       cssls = {},
     }
 
