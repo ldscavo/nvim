@@ -204,7 +204,7 @@ return {
       },
       eslint = {},
       fsautocomplete = {},
-      pylsp = {},
+      pyright = {},
       csharp_ls = {},
       cssls = {},
     }
