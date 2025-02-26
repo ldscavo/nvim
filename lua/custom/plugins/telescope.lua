@@ -44,17 +44,26 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
+    local themes = require 'telescope.themes'
+
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   layout_strategy = 'vertical',
-      -- },
+      defaults = {
+        mappings = {
+          n = {
+            ['<c-d>'] = require('telescope.actions').delete_buffer,
+          },
+          i = {
+            ['<c-d>'] = require('telescope.actions').delete_buffer,
+          },
+        },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+          themes.get_dropdown(),
         },
         ['file_browser'] = {
           theme = 'ivy',
@@ -72,6 +81,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
+
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
@@ -83,10 +93,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+    vim.keymap.set('n', '<leader>sp', function()
+      builtin.registers(themes.get_dropdown())
+    end, { desc = 'Search [P]aste Registers' })
+
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      builtin.current_buffer_fuzzy_find(themes.get_dropdown {
         winblend = 10,
         previewer = false,
       })
