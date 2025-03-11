@@ -207,6 +207,8 @@ return {
       pyright = {},
       csharp_ls = {},
       cssls = {},
+      powershell_es = {},
+      terraformls = {},
     }
 
     -- Ensure the servers and tools above are installed

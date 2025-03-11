@@ -66,6 +66,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
           themes.get_dropdown(),
         },
         ['file_browser'] = {
+          path = '%:p:h',
           theme = 'ivy',
           grouped = true,
           hijack_netrw = true,
