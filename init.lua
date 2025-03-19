@@ -7,7 +7,10 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
-if vim.fn.has 'win32' then
+local uname = vim.loop.os_uname()
+vim.g.is_windows = uname.sysname:find 'Windows' and true or false
+
+if vim.g.is_windows then
   -- Use Powershell instead of CMD for terminal mode
   vim.o.sh = 'pwsh'
   vim.o.shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
