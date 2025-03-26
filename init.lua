@@ -115,6 +115,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<C-H>', '<C-w>H', { desc = 'Move window to the left' })
+vim.keymap.set('n', '<C-L>', '<C-w>L', { desc = 'Move window to the right' })
+vim.keymap.set('n', '<C-J>', '<C-w>J', { desc = 'Move window to the lower' })
+vim.keymap.set('n', '<C-K>', '<C-w>K', { desc = 'Move window to the upper' })
+
+-- Keymaps to move lines of code
 vim.keymap.set('n', '<A-j>', ':m +1<CR>', { desc = 'Move current line down' })
 vim.keymap.set('n', '<A-k>', ':m -2<CR>', { desc = 'Move current line up' })
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv", { desc = 'Move selected lines down' })
