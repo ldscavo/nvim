@@ -41,7 +41,7 @@ vim.opt.showmode = false
 vim.wo.wrap = false
 
 -- Add floating window border
-vim.o.winborder = 'rounded'
+--vim.o.winborder = 'rounded'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -127,11 +127,6 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
-vim.keymap.set('n', '<C-H>', '<C-w>H', { desc = 'Move window to the left' })
-vim.keymap.set('n', '<C-L>', '<C-w>L', { desc = 'Move window to the right' })
-vim.keymap.set('n', '<C-J>', '<C-w>J', { desc = 'Move window to the lower' })
-vim.keymap.set('n', '<C-K>', '<C-w>K', { desc = 'Move window to the upper' })
 
 -- Keymaps to move lines of code
 vim.keymap.set('n', '<A-j>', ':m +1<CR>', { desc = 'Move current line down' })
