@@ -13,5 +13,9 @@ return {
     vim.api.nvim_create_user_command('Lazygit', function()
       vim.api.nvim_command 'FloatermNew --height=0.9 --width=0.9 lazygit'
     end, {})
+
+    vim.api.nvim_create_user_command('Lazydocker', function()
+      vim.api.nvim_command 'FloatermNew --height=0.9 --width=0.9 lazydocker'
+    end, {})
   end,
 }
