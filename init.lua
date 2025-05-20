@@ -28,7 +28,7 @@ vim.opt.showmode = false
 vim.wo.wrap = false
 
 -- Add floating window border
---vim.o.winborder = 'rounded'
+-- vim.o.winborder = 'rounded'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -195,7 +195,10 @@ require('lazy').setup({
 
   {
     'nvim-telescope/telescope-file-browser.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
   },
   -- LSP Plugins
   {
@@ -253,16 +256,7 @@ require('lazy').setup({
       },
     },
   },
-  'JoosepAlviste/nvim-ts-context-commentstring',
-
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   priority = 1000,
-  --   init = function()
-  --     vim.cmd.colorscheme 'tokyonight-night'
-  --     vim.cmd.hi 'Comment gui=none'
-  --   end,
-  -- },
+  { 'JoosepAlviste/nvim-ts-context-commentstring', opts = {} },
   {
     'Mofiqul/vscode.nvim',
     priority = 1000,
@@ -298,13 +292,6 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
-
-      -- local statusline = require 'mini.statusline'
-      -- statusline.setup { use_icons = vim.g.have_nerd_font }
-      -- ---@diagnostic disable-next-line: duplicate-set-field
-      -- statusline.section_location = function()
-      --   return '%2l:%-2v'
-      -- end
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
