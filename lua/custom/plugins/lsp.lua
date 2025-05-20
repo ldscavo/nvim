@@ -196,7 +196,7 @@ return {
       },
       fsautocomplete = {},
       pyright = {},
-      csharp_ls = {},
+      -- roslyn = {},
       cssls = {},
       powershell_es = {},
       terraformls = {},
