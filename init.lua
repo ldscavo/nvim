@@ -268,7 +268,23 @@ require('lazy').setup({
         },
       }
       vim.cmd.colorscheme 'vscode'
-      -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    init = function()
+      require('nvim-tree').setup {
+        view = {
+          width = 50,
+        },
+      }
+
+      local api = require 'nvim-tree.api'
+
+      vim.keymap.set('n', '\\', function()
+        api.tree.toggle { find_file = true }
+      end)
+      -- vim.keymap.set('n', '?', api.tree.toggle_help)
     end,
   },
 
