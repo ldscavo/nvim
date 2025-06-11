@@ -10,6 +10,9 @@ return {
     vim.keymap.set('n', '<F4>', ':FloatermPrev<CR>', { desc = 'Next terminal' })
     vim.keymap.set('t', '<F4>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Next terminal' })
 
+    vim.g.floaterm_width = 0.65
+    vim.g.floaterm_height = 0.75
+
     vim.api.nvim_create_user_command('Lazygit', function()
       vim.api.nvim_command 'FloatermNew --height=0.9 --width=0.9 lazygit'
     end, {})
