@@ -8,9 +8,9 @@ return {
       scope = {
         show_start = false,
         show_end = false,
-        highlight = { 'IndentBlanklineContextChar' },
+        -- highlight = { 'IndentBlanklineContextChar' },
       },
-      indent = { highlight = { 'IndentBlanklineSpaceChar' } },
+      -- indent = { highlight = { 'IndentBlanklineSpaceChar' } },
     },
   },
 }
