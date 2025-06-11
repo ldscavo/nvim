@@ -270,19 +270,34 @@ require('lazy').setup({
     },
   },
   { 'JoosepAlviste/nvim-ts-context-commentstring', opts = {} },
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   priority = 1000,
+  --   init = function()
+  --     -- vim.cmd.colorscheme 'tokyonight-night'
+  --   end,
+  -- },
   {
-    'Mofiqul/vscode.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     init = function()
-      require('vscode').setup {
-        italic_comments = true,
-        color_overrides = {
-          vscCursorDarkDark = '#404040',
-        },
-      }
-      vim.cmd.colorscheme 'vscode'
+      vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
   },
+  -- {
+  --   'Mofiqul/vscode.nvim',
+  --   priority = 1000,
+  --   init = function()
+  --     require('vscode').setup {
+  --       italic_comments = true,
+  --       color_overrides = {
+  --         vscCursorDarkDark = '#404040',
+  --       },
+  --     }
+  --     vim.cmd.colorscheme 'vscode'
+  --   end,
+  -- },
   {
     'nvim-tree/nvim-tree.lua',
     init = function()
