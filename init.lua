@@ -282,6 +282,13 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     init = function()
+      require('catppuccin').setup {
+        integrations = {
+          mason = true,
+          neotest = true,
+          which_key = true,
+        },
+      }
       vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
   },
