@@ -50,6 +50,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --  All the info you're looking for is in `:help telescope.setup()`
       --
       defaults = {
+        border = false,
         mappings = {
           n = {
             ['<c-d>'] = require('telescope.actions').delete_buffer,
@@ -65,6 +66,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
           themes.get_dropdown(),
         },
         ['file_browser'] = {
+          border = false,
           path = '%:p:h',
           theme = 'ivy',
           grouped = true,
