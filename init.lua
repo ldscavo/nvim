@@ -41,7 +41,7 @@ vim.opt.showmode = false
 vim.wo.wrap = false
 
 -- Add floating window border
-vim.o.winborder = 'rounded'
+-- vim.o.winborder = 'rounded'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -305,23 +305,23 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'vscode'
   --   end,
   -- },
-  {
-    'nvim-tree/nvim-tree.lua',
-    init = function()
-      require('nvim-tree').setup {
-        view = {
-          width = 50,
-        },
-      }
-
-      local api = require 'nvim-tree.api'
-
-      vim.keymap.set('n', '\\', function()
-        api.tree.toggle { find_file = true }
-      end)
-      -- vim.keymap.set('n', '?', api.tree.toggle_help)
-    end,
-  },
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   init = function()
+  --     require('nvim-tree').setup {
+  --       view = {
+  --         width = 50,
+  --       },
+  --     }
+  --
+  --     local api = require 'nvim-tree.api'
+  --
+  --     vim.keymap.set('n', '\\', function()
+  --       api.tree.toggle { find_file = true }
+  --     end)
+  --     -- vim.keymap.set('n', '?', api.tree.toggle_help)
+  --   end,
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -387,7 +387,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
