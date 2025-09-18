@@ -67,6 +67,15 @@ vim.opt.updatetime = 250
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Configure folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldcolumn = '0'
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.opt.foldtext = ''
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
