@@ -130,6 +130,13 @@ vim.keymap.set('n', '<A-k>', ':m -2<CR>', { desc = 'Move current line up' })
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv", { desc = 'Move selected lines down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv", { desc = 'Move selected lines up' })
 
+-- Keymaps for easier tab management
+vim.keymap.set('n', '<A-t>', ':tabnew<CR>', { desc = 'Open new tab' })
+vim.keymap.set('n', '<A-]>', ':+tabnext<CR>', { desc = 'Go to next tab' })
+vim.keymap.set('n', '<A-[>', ':-tabnext<CR>', { desc = 'Go to previous tab' })
+vim.keymap.set('n', '<A-d>', ':tabclose<CR>', { desc = 'Delete current tab' })
+vim.keymap.set('n', '<A-o>', ':tabe %<CR>', { desc = 'Open current buffer in new tab' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
