@@ -178,6 +178,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'hiphish/rainbow-delimiters.nvim',
+  'windwp/nvim-ts-autotag',
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -250,7 +251,7 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = true, fsharp = true }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
           lsp_format_opt = 'never'
@@ -277,7 +278,7 @@ require('lazy').setup({
       },
     },
   },
-  { 'JoosepAlviste/nvim-ts-context-commentstring', opts = {} },
+  { 'folke/ts-comments.nvim', opts = {}, event = 'VeryLazy' },
   -- {
   --   'folke/tokyonight.nvim',
   --   priority = 1000,
@@ -291,11 +292,7 @@ require('lazy').setup({
     priority = 1000,
     init = function()
       require('catppuccin').setup {
-        integrations = {
-          mason = true,
-          neotest = true,
-          which_key = true,
-        },
+        auto_integrations = true,
       }
       vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
