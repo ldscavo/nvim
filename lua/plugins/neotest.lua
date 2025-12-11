@@ -6,6 +6,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     {
       'Issafalcon/neotest-dotnet',
+      'Nsidorenco/neotest-vstest',
     },
   },
   config = function()
@@ -16,6 +17,7 @@ return {
         require 'neotest-dotnet' {
           discovery_root = 'solution',
         },
+        require 'neotest-vstest' {},
       },
     }
 
