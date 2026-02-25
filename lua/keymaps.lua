@@ -40,3 +40,7 @@ vim.keymap.set('n', '<A-]>', ':+tabnext<CR>', { desc = 'Go to next tab' })
 vim.keymap.set('n', '<A-[>', ':-tabnext<CR>', { desc = 'Go to previous tab' })
 vim.keymap.set('n', '<A-d>', ':tabclose<CR>', { desc = 'Delete current tab' })
 vim.keymap.set('n', '<A-o>', ':tabe %<CR>', { desc = 'Open current buffer in new tab' })
+
+-- Better indenting in visual mode
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
