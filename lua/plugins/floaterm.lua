@@ -1,5 +1,6 @@
 return {
   'voldikss/vim-floaterm',
+  enabled = false,
   config = function()
     vim.keymap.set('n', '<F2>', ':FloatermNew<CR>', { desc = 'Create new terminal' })
     vim.keymap.set('t', '<F2>', '<C-\\><C-n>:FloatermNew<CR>', { desc = 'Create new terminal' })
