@@ -28,4 +28,12 @@ return {
     },
     -- your configuration comes here; leave empty for default settings
   },
+  config = function()
+    vim.api.nvim_create_autocmd('VimLeavePre', {
+      callback = function()
+        -- Force stop the roslyn server on exit
+        vim.cmd 'Roslyn stop'
+      end,
+    })
+  end,
 }
