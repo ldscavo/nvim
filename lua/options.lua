@@ -12,7 +12,7 @@ vim.opt.showmode = false
 vim.wo.wrap = false
 
 -- Add floating window border
--- vim.o.winborder = 'rounded'
+vim.o.winborder = 'rounded'
 
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()

@@ -10,9 +10,6 @@ return {
           'github:mason-org/mason-registry',
           'github:Crashdummyy/mason-registry',
         },
-        ui = {
-          border = 'single',
-        },
       },
     },
     'williamboman/mason-lspconfig.nvim',
@@ -76,9 +73,7 @@ return {
         --  For example, in C this would take you to the header.
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-        map('K', function()
-          vim.lsp.buf.hover { border = 'single' }
-        end, 'Hover documentation')
+        map('K', vim.lsp.buf.hover, 'Hover documentation')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -161,6 +156,7 @@ return {
           },
         },
       },
+      ts_ls = {},
       eslint = {},
       fsautocomplete = {},
       pyright = {},
