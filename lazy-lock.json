@@ -33,7 +33,7 @@
   "oil-git.nvim": { "branch": "main", "commit": "95b0d83f70e5e3e889f4d2f8b70eba5185ff67b6" },
   "oil.nvim": { "branch": "master", "commit": "0fcc83805ad11cf714a949c98c605ed717e0b83e" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
-  "roslyn.nvim": { "branch": "main", "commit": "c4ef25973bcc30a2c8c8766711fbbdb3d02b70a3" },
+  "roslyn.nvim": { "branch": "main", "commit": "f2ec6ee6384c3b611ddc817b9e78b20cd0334bbb" },
   "scrollEOF.nvim": { "branch": "master", "commit": "2575109749b4bf3a0bf979a17947b3c1e8c5137e" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "3610dc7dc91f06aa98b11dca5cc30dfa98626b7e" },
