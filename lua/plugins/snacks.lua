@@ -34,7 +34,7 @@ return {
       animate = { enabled = false },
     },
     dashboard = {
-      enabled = false,
+      enabled = true,
     },
     styles = {
       input = {
@@ -50,7 +50,14 @@ return {
     {
       '<F2>',
       function()
-        Snacks.terminal()
+        Snacks.terminal(nil, {
+          win = {
+            position = 'float',
+            max_width = 120,
+            max_height = 40,
+            border = true,
+          },
+        })
       end,
       mode = { 'n', 't' },
     },
@@ -106,11 +113,18 @@ return {
       desc = '[S]earch Recent Files ("." for repeat)',
     },
     {
+      '<leader>sm',
+      function()
+        Snacks.picker.marks()
+      end,
+      desc = '[S]earch [M]arks',
+    },
+    {
       '<leader>fb',
       function()
         Snacks.picker.explorer { layout = 'ivy' }
       end,
-      desc = '',
+      desc = '[F]ile [B]rowser',
     },
     -- LSP
     {
