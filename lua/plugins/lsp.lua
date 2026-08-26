@@ -165,6 +165,7 @@ return {
       powershell_es = {},
       terraformls = {},
       docker_compose_language_service = {},
+      tailwindcss = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
