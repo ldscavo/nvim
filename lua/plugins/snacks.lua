@@ -120,6 +120,13 @@ return {
       desc = '[S]earch [M]arks',
     },
     {
+      '<leader>ss',
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = '[S]earch Git [S]tatus',
+    },
+    {
       '<leader>fb',
       function()
         Snacks.picker.explorer { layout = 'ivy' }
