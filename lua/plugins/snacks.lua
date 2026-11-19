@@ -4,6 +4,8 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
+    quickfile = { enabled = true },
     input = {
       enabled = true,
     },
