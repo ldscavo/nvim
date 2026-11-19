@@ -1,31 +1,21 @@
 return {
   'nvim-neotest/neotest',
-  commit = '52fca6717ef972113ddd6ca223e30ad0abb2800c',
   dependencies = {
     'nvim-neotest/nvim-nio',
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
-    {
-      'Issafalcon/neotest-dotnet',
-    },
+    'nsidorenco/neotest-vstest',
+  },
+  keys = {
+    { '<leader>tr', function() require('neotest').run.run() end, desc = '[T]est [R]un' },
+    { '<leader>tf', function() require('neotest').run.run(vim.fn.expand '%') end, desc = '[T]est [F]ile' },
+    { '<leader>te', function() require('neotest').summary.open() end, desc = '[T]est [E]xplorer' },
   },
   config = function()
-    local neotest = require 'neotest'
-
-    neotest.setup {
+    require('neotest').setup {
       adapters = {
-        require 'neotest-dotnet' {
-          discovery_root = 'solution',
-        },
+        require 'neotest-vstest',
       },
     }
-
-    vim.keymap.set('n', '<leader>tr', neotest.run.run, { desc = '[T]est [R]un' })
-
-    vim.keymap.set('n', '<leader>tf', function()
-      neotest.run.run(vim.fn.expand '%')
-    end, { desc = '[T]est [F]ile' })
-
-    vim.keymap.set('n', '<leader>te', neotest.summary.open, { desc = '[T]est [E]xplorer' })
   end,
 }
