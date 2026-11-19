@@ -35,6 +35,14 @@ return {
     },
     dashboard = {
       enabled = true,
+      sections = {
+        { section = 'header' },
+        -- { section = 'keys', gap = 1, padding = 1 },
+        { icon = ' ', title = 'Keymaps', section = 'keys', indent = 2, padding = 1 },
+        { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 1 },
+        { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 1 },
+        { section = 'startup' },
+      },
     },
     styles = {
       input = {
@@ -67,6 +75,14 @@ return {
         Snacks.lazygit()
       end,
       desc = 'Lazygit',
+      mode = { 'n', 't' },
+    },
+    {
+      '<F4>',
+      function()
+        Snacks.terminal 'lazydocker'
+      end,
+      desc = 'Lazydocker',
       mode = { 'n', 't' },
     },
     -- Picker
@@ -108,7 +124,7 @@ return {
     {
       '<leader>s.',
       function()
-        Snacks.picker.recent { matcher = { history_bonus = true } }
+        Snacks.picker.recent()
       end,
       desc = '[S]earch Recent Files ("." for repeat)',
     },
