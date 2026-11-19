@@ -1,3 +1,15 @@
+-- Toggle a terminal and hide any other visible ones
+local function exclusive(open)
+  return function()
+    local target = open()
+    for _, t in ipairs(Snacks.terminal.list()) do
+      if t ~= target and t:win_valid() then
+        t:hide()
+      end
+    end
+  end
+end
+
 return {
   'folke/snacks.nvim',
   priority = 1000,
@@ -59,8 +71,8 @@ return {
     -- Terminal
     {
       '<F2>',
-      function()
-        Snacks.terminal(nil, {
+      exclusive(function()
+        return Snacks.terminal(nil, {
           win = {
             position = 'float',
             max_width = 120,
@@ -68,22 +80,22 @@ return {
             border = true,
           },
         })
-      end,
+      end),
       mode = { 'n', 't' },
     },
     {
       '<F3>',
-      function()
-        Snacks.lazygit()
-      end,
+      exclusive(function()
+        return Snacks.lazygit()
+      end),
       desc = 'Lazygit',
       mode = { 'n', 't' },
     },
     {
       '<F4>',
-      function()
-        Snacks.terminal 'lazydocker'
-      end,
+      exclusive(function()
+        return Snacks.terminal 'lazydocker'
+      end),
       desc = 'Lazydocker',
       mode = { 'n', 't' },
     },
